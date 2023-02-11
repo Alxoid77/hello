@@ -25,15 +25,15 @@ func main() {
 
 	for update := range updates {
 		if update.Message != nil { // If we got a message
-			log.Printf("[%s] %s", update.Message.From.UserName, update.Message.Text)
+
+			var text string = update.Message.Text.result
+			log.Printf("[%s] %s", update.Message.From.UserName, text)
 
 			//msg := tgbotapi.NewMessage(update.Message.Chat.ID, update.Message.Text)
-			msg := tgbotapi.NewMessage(update.Message.Chat.ID, "хуяк хуяк")
+			msg := tgbotapi.NewMessage(update.Message.Chat.ID, text)
 			msg.ReplyMarkup = GetMainMenuKeyboard()
 			//msg.ReplyToMessageID = update.Message.MessageID
-			if msg.Text == "geoloc" {
-				msg.Text = "geoloc2"
-			}
+
 			bot.Send(msg)
 		}
 	}
