@@ -7,9 +7,9 @@ import (
 func GetMainMenuKeyboard() tgbotapi.ReplyKeyboardMarkup {
 	return tgbotapi.NewReplyKeyboard(
 		tgbotapi.NewKeyboardButtonRow(
-			tgbotapi.NewKeyboardButton("голосовалка"),
+			//tgbotapi.NewKeyboardButton("голосовалка"),
 			tgbotapi.NewKeyboardButton("є світло?"),
-			tgbotapi.NewKeyboardButton("коли днюха?"),
+			tgbotapi.NewKeyboardButton("тривоги"),
 			tgbotapi.NewKeyboardButtonLocation("де я?"),
 		),
 	)

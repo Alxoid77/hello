@@ -34,6 +34,8 @@ func main() {
 				text = update.Message.Text
 				if text == "є світло?" {
 					text = pkg.GetElectricityStatus()
+				} else if text == "тривоги" {
+					text = "https://alerts.com.ua/map.png"
 				}
 			} else {
 				lat := update.Message.Location.Latitude
