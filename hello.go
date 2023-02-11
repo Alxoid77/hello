@@ -43,6 +43,7 @@ func GetMainMenuKeyboard() tgbotapi.ReplyKeyboardMarkup {
 			tgbotapi.NewKeyboardButton("Menu 1"),
 			tgbotapi.NewKeyboardButton("Menu 2"),
 			tgbotapi.NewKeyboardButton("Menu 3"),
+			tgbotapi.NewKeyboardButtonLocation(),
 		),
 	)
 }
