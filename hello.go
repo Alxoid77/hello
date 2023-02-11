@@ -7,10 +7,11 @@ import (
 
 	pkg "github.com/Alxoid77/hello/pkg"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
-	//chatgpt "github.com/golang-infrastructure/go-ChatGPT"
+	//sqlite "github.com/mattn/go-sqlite3"
 )
 
 func main() {
+
 	bot, err := tgbotapi.NewBotAPI(os.Getenv("TELEGRAM_API_TOKEN"))
 	if err != nil {
 		log.Panic(err)
@@ -27,20 +28,23 @@ func main() {
 
 	for update := range updates {
 		if update.Message != nil { // If we got a message
+			coord := ""
+			text := ""
+			if update.Message.Location == nil {
+				text = update.Message.Text
+			} else {
+				lat := update.Message.Location.Latitude
+				lon := update.Message.Location.Longitude
+				coord = "https://maps.google.com/maps?q=" + strconv.FormatFloat(lat, 'f', -1, 64) + "," + strconv.FormatFloat(lon, 'f', -1, 64)
+			}
+			log.Printf("[%s] %s", update.Message.From.UserName, text+coord)
 
-			text := update.Message.Text
-			lat := update.Message.Location.Latitude
-			lon := update.Message.Location.Longitude
-			text = strconv.FormatFloat(lat, 'f', -1, 64) + ", " + strconv.FormatFloat(lon, 'f', -1, 64)
-
-			log.Printf("[%s] %s", update.Message.From.UserName, text)
-
-			//msg := tgbotapi.NewMessage(update.Message.Chat.ID, update.Message.Text)
-			msg := tgbotapi.NewMessage(update.Message.Chat.ID, text)
+			msg := tgbotapi.NewMessage(update.Message.Chat.ID, text+coord)
 			msg.ReplyMarkup = pkg.GetMainMenuKeyboard()
 			//msg.ReplyToMessageID = update.Message.MessageID
 
 			bot.Send(msg)
+
 		}
 	}
 }

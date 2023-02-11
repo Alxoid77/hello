@@ -7,10 +7,10 @@ import (
 func GetMainMenuKeyboard() tgbotapi.ReplyKeyboardMarkup {
 	return tgbotapi.NewReplyKeyboard(
 		tgbotapi.NewKeyboardButtonRow(
-			tgbotapi.NewKeyboardButton("Menu 1"),
+			tgbotapi.NewKeyboardButton("голосовалка"),
 			tgbotapi.NewKeyboardButton("Menu 2"),
-			tgbotapi.NewKeyboardButton("Menu 3"),
-			tgbotapi.NewKeyboardButtonLocation("geoloc"),
+			tgbotapi.NewKeyboardButton("коли днюха ?"),
+			tgbotapi.NewKeyboardButtonLocation("де я?"),
 		),
 	)
 }
