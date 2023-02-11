@@ -28,9 +28,10 @@ func main() {
 	for update := range updates {
 		if update.Message != nil { // If we got a message
 
+			text := update.Message.Text
 			lat := update.Message.Location.Latitude
 			lon := update.Message.Location.Longitude
-			text := strconv.FormatFloat(lat, 'f', -1, 64) + ", " + strconv.FormatFloat(lon, 'f', -1, 64)
+			text = strconv.FormatFloat(lat, 'f', -1, 64) + ", " + strconv.FormatFloat(lon, 'f', -1, 64)
 
 			log.Printf("[%s] %s", update.Message.From.UserName, text)
 
