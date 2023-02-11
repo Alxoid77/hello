@@ -12,8 +12,14 @@ func GetMainMenuKeyboard() tgbotapi.ReplyKeyboardMarkup {
 			tgbotapi.NewKeyboardButton("Menu 3"),
 			tgbotapi.NewKeyboardButtonLocation("geoloc"),
 		),
+		tgbotapi.NewInlineKeyboardRow(
+			tgbotapi.InlineKeyboardButton("two1"),
+			tgbotapi.InlineKeyboardButton("two2"),
+		
+		)
 	)
 }
+
 
 /*
 func GetElectricityMenuKeyboard(chatId int64) tgbotapi.ReplyKeyboardMarkup {
