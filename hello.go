@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	//pkg "github.com/Alxoid77/hello/pkg"
+	pkg "github.com/Alxoid77/hello/pkg"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 	//chatgpt "github.com/golang-infrastructure/go-ChatGPT"
 )
@@ -31,21 +31,10 @@ func main() {
 
 			//msg := tgbotapi.NewMessage(update.Message.Chat.ID, update.Message.Text)
 			msg := tgbotapi.NewMessage(update.Message.Chat.ID, text)
-			msg.ReplyMarkup = GetMainMenuKeyboard()
+			msg.ReplyMarkup = pkg.GetMainMenuKeyboard()
 			//msg.ReplyToMessageID = update.Message.MessageID
 
 			bot.Send(msg)
 		}
 	}
-}
-
-func GetMainMenuKeyboard() tgbotapi.ReplyKeyboardMarkup {
-	return tgbotapi.NewReplyKeyboard(
-		tgbotapi.NewKeyboardButtonRow(
-			tgbotapi.NewKeyboardButton("Menu 1"),
-			tgbotapi.NewKeyboardButton("Menu 2"),
-			tgbotapi.NewKeyboardButton("Menu 3"),
-			tgbotapi.NewKeyboardButtonLocation("geoloc"),
-		),
-	)
 }
