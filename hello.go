@@ -32,6 +32,9 @@ func main() {
 			text := ""
 			if update.Message.Location == nil {
 				text = update.Message.Text
+				if text == "є світло?" {
+					text = pkg.GetElectricityStatus()
+				}
 			} else {
 				lat := update.Message.Location.Latitude
 				lon := update.Message.Location.Longitude
