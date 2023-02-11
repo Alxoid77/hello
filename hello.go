@@ -4,6 +4,7 @@ import (
 	"log"
 
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
+	//"github.com/Alxoid77/hello/pkg"
 	//chatgpt "github.com/golang-infrastructure/go-ChatGPT"
 )
 
