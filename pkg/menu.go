@@ -7,13 +7,13 @@ import (
 func GetMainMenuKeyboard() tgbotapi.ReplyKeyboardMarkup {
 	return tgbotapi.NewReplyKeyboard(
 		tgbotapi.NewKeyboardButtonRow(
-			tgbotapi.NewKeyboardButton(ELECTRICITY_STATUS_COMMAND),
+			tgbotapi.NewKeyboardButton("Menu 1"),
 		),
 		tgbotapi.NewKeyboardButtonRow(
-			tgbotapi.NewKeyboardButton(NP_STATUS_COMMAND),
+			tgbotapi.NewKeyboardButton("Menu 2"),
 		),
 		tgbotapi.NewKeyboardButtonRow(
-			tgbotapi.NewKeyboardButton(POST_STATUS_COMMAND),
+			tgbotapi.NewKeyboardButton("Menu 3"),
 		),
 	)
 }

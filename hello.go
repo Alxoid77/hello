@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 
+	pkg "github.com/Alxoid77/hello/pkg"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
-	//"github.com/Alxoid77/hello/pkg"
 	//chatgpt "github.com/golang-infrastructure/go-ChatGPT"
 )
 
@@ -29,6 +29,7 @@ func main() {
 
 			//msg := tgbotapi.NewMessage(update.Message.Chat.ID, update.Message.Text)
 			msg := tgbotapi.NewMessage(update.Message.Chat.ID, "хуяк хуяк")
+			msg.ReplyMarkup = pkg.GetMainMenuKeyboard()
 			//msg.ReplyToMessageID = update.Message.MessageID
 
 			bot.Send(msg)
