@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	pkg "github.com/Alxoid77/hello/pkg"
+	"github.com/Alxoid77/hello/pkg"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 	//chatgpt "github.com/golang-infrastructure/go-ChatGPT"
 )

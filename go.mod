@@ -1,4 +1,4 @@
-module example.com/hello
+module github.com/Alxoid77/hello
 
 go 1.20
 
