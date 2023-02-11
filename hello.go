@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"os"
+	"strconv"
 
 	pkg "github.com/Alxoid77/hello/pkg"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
@@ -27,7 +28,10 @@ func main() {
 	for update := range updates {
 		if update.Message != nil { // If we got a message
 
-			text := "хуяк хуяк"
+			lat := update.Message.Location.Latitude
+			lon := update.Message.Location.Longitude
+			text := strconv.FormatFloat(lat, 'f', -1, 64) + ", " + strconv.FormatFloat(lon, 'f', -1, 64)
+
 			log.Printf("[%s] %s", update.Message.From.UserName, text)
 
 			//msg := tgbotapi.NewMessage(update.Message.Chat.ID, update.Message.Text)
