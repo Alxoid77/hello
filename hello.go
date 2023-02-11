@@ -31,7 +31,9 @@ func main() {
 			msg := tgbotapi.NewMessage(update.Message.Chat.ID, "хуяк хуяк")
 			msg.ReplyMarkup = GetMainMenuKeyboard()
 			//msg.ReplyToMessageID = update.Message.MessageID
-
+			if msg.Text == "geoloc" {
+				msg.Text = "geoloc2"
+			}
 			bot.Send(msg)
 		}
 	}
@@ -43,7 +45,7 @@ func GetMainMenuKeyboard() tgbotapi.ReplyKeyboardMarkup {
 			tgbotapi.NewKeyboardButton("Menu 1"),
 			tgbotapi.NewKeyboardButton("Menu 2"),
 			tgbotapi.NewKeyboardButton("Menu 3"),
-			tgbotapi.NewKeyboardButtonLocation(),
+			tgbotapi.NewKeyboardButtonLocation("geoloc"),
 		),
 	)
 }
