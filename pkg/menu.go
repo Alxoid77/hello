@@ -18,6 +18,7 @@ func GetMainMenuKeyboard() tgbotapi.ReplyKeyboardMarkup {
 	)
 }
 
+/*
 func GetElectricityMenuKeyboard(chatId int64) tgbotapi.ReplyKeyboardMarkup {
 	var subscribtionElectricityCommand = SUBSCRIBE_ELECTRICITY_COMMAND
 
@@ -34,3 +35,4 @@ func GetElectricityMenuKeyboard(chatId int64) tgbotapi.ReplyKeyboardMarkup {
 		),
 	)
 }
+*/
