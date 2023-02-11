@@ -13,9 +13,9 @@ func main() {
 
 // Обработчик возвращает компонент пути из URL запроса,
 func handler(w http.ResponseWriter, r *http.Request) {
-	var resp string
-	fmt.Fprintf(resp, "URL.Path = %q\n", r.URL.Path)
-	w = formatter(resp)
+	//var resp string
+	fmt.Fprintf(w, "URL.Path = %q\n", r.URL.Path)
+	//w = formatter(resp)
 }
 
 func formatter(input string) string {
