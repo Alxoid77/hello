@@ -27,7 +27,7 @@ func main() {
 	for update := range updates {
 		if update.Message != nil { // If we got a message
 
-			text := update.Message.Text
+			text := "хуяк хуяк"
 			log.Printf("[%s] %s", update.Message.From.UserName, text)
 
 			//msg := tgbotapi.NewMessage(update.Message.Chat.ID, update.Message.Text)
