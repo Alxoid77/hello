@@ -12,7 +12,7 @@ import (
 
 func main() {
 
-	bot, err := tgbotapi.NewBotAPI(os.Getenv("TELEGRAM_API_TOKEN"))
+	bot, err := tgbotapi.NewBotAPI(os.Getenv("TELEGRAM_API_TOKEN2"))
 	if err != nil {
 		log.Panic(err)
 	}
@@ -37,7 +37,7 @@ func main() {
 				} else if text == pkg.MENU_RAID {
 					text = "https://alerts.com.ua/map.png"
 				} else if strings.Split(text, "клює") != nil {
-					text = "ооооотакого ляща піймав !"
+					text = "дуже умний дом !"
 				}
 			} else {
 				lat := update.Message.Location.Latitude
