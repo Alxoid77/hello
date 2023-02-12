@@ -42,7 +42,7 @@ func main() {
 			} else {
 				lat := update.Message.Location.Latitude
 				lon := update.Message.Location.Longitude
-				coord = pkg.GetGeolocationURL(lat, lon)
+				coord = pkg.GetGeolocationURL(update.Message.Chat.ID, bot.Self.UserName, lat, lon)
 			}
 			log.Printf("[%s] %s", update.Message.From.UserName, text+coord)
 
