@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	pkg "github.com/Alxoid77/hello/pkg"
+	pkg "github.com/Alxoid77/hassbot/pkg"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 	//sqlite "github.com/mattn/go-sqlite3"
 )

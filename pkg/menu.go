@@ -14,7 +14,7 @@ const (
 func GetMainMenuKeyboard() tgbotapi.ReplyKeyboardMarkup {
 	return tgbotapi.NewReplyKeyboard(
 		tgbotapi.NewKeyboardButtonRow(
-			//tgbotapi.NewKeyboardButton(MENU_POLL),
+			tgbotapi.NewKeyboardButton(MENU_POLL),
 			tgbotapi.NewKeyboardButton(MENU_ELECTRICITY),
 			tgbotapi.NewKeyboardButton(MENU_RAID),
 			tgbotapi.NewKeyboardButtonLocation(MENU_GEOLOC),
