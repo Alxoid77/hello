@@ -1,4 +1,4 @@
-module github.com/Alxoid77/hello
+module github.com/Alxoid77/hassbot
 
 go 1.20
 
