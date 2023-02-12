@@ -3,7 +3,6 @@ package main
 import (
 	"log"
 	"os"
-	"strconv"
 	"strings"
 
 	pkg "github.com/Alxoid77/hello/pkg"
@@ -43,7 +42,7 @@ func main() {
 			} else {
 				lat := update.Message.Location.Latitude
 				lon := update.Message.Location.Longitude
-				coord = "https://maps.google.com/maps?q=" + strconv.FormatFloat(lat, 'f', -1, 64) + "," + strconv.FormatFloat(lon, 'f', -1, 64)
+				coord = pkg.GetGeolocationURL(lat, lon)
 			}
 			log.Printf("[%s] %s", update.Message.From.UserName, text+coord)
 
