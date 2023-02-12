@@ -33,9 +33,9 @@ func main() {
 			text := ""
 			if update.Message.Location == nil {
 				text = update.Message.Text
-				if text == MENU_ELECTRICITY {
+				if text == pkg.MENU_ELECTRICITY {
 					text = pkg.GetElectricityStatus()
-				} else if text == MENU_RAID {
+				} else if text == pkg.MENU_RAID {
 					text = "https://alerts.com.ua/map.png"
 				} else if strings.Split(text, "клює") != nil {
 					text = "ооооотакого ляща піймав !"
